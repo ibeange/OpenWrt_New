@@ -14,12 +14,12 @@ chmod +x $GITHUB_WORKSPACE/diy_script/function.sh
 source $GITHUB_WORKSPACE/diy_script/function.sh
 
 # 修改主机名字，修改你喜欢的就行（不能纯数字或者使用中文）
-# sed -i "/uci commit system/i\uci set system.@system[0].hostname='Jejz'" package/lean/default-settings/files/zzz-default-settings
-# sed -i "s/hostname='.*'/hostname='Jejz'/g" ./package/base-files/files/bin/config_generate
+sed -i "/uci commit system/i\uci set system.@system[0].hostname='Ethan'" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/hostname='.*'/hostname='Ethan'/g" ./package/base-files/files/bin/config_generate
 
 # 修改默认IP
-sed -i 's/192.168.1.1/192.168.8.3/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.8.3/g' package/base-files/luci2/bin/config_generate
+sed -i 's/192.168.1.1/10.1.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.1.0.1/g' package/base-files/luci2/bin/config_generate
 
 # 设置密码为空（安装固件时无需密码登陆，然后自己修改想要的密码）
 sed -i '/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF./d' package/lean/default-settings/files/zzz-default-settings
@@ -73,13 +73,13 @@ fi
 # 添加整个源仓库(git_clone)/添加源仓库内的指定目录(clone_dir)/添加源仓库内的所有目录(clone_all)
 # filebrowser luci-app-pushbot
 rm -rf feeds/packages/net/adguardhome
-clone_dir main https://github.com/xiangfeidexiaohuo/2305-ipk luci-app-adguardhome luci-app-pushbot luci-app-poweroff
+clone_dir main https://github.com/xiangfeidexiaohuo/2305-ipk luci-app-poweroff
 
 # 替换immortalwrt插件
-clone_dir master https://github.com/immortalwrt/luci luci-app-syncdial luci-app-eqos luci-app-nps luci-app-frpc luci-app-frps luci-app-hd-idle luci-app-socat luci-app-n2n luci-app-softethervpn
+clone_dir master https://github.com/immortalwrt/luci luci-app-eqos luci-app-nps luci-app-socat
 
 # 补全依赖
-clone_dir master https://github.com/immortalwrt/packages nps n2n socat
+clone_dir master https://github.com/immortalwrt/packages nps socat
 
 # ddns-go 动态域名
 # clone_all https://github.com/sirpdboy/luci-app-ddns-go
@@ -91,16 +91,16 @@ clone_dir master https://github.com/immortalwrt/packages nps n2n socat
 clone_all https://github.com/gdy666/luci-app-lucky
 
 # ddnsto
-clone_dir main https://github.com/linkease/nas-packages-luci luci-app-ddnsto
-clone_dir master https://github.com/linkease/nas-packages ddnsto
-ddnsto_ver=$(grep -i "PKG_VERSION:=" $destination_dir/ddnsto/Makefile | awk -F'=' '{print $2}' | tr -d ' ')
-if [ "$ddnsto_ver" == "3.0.4" ]; then
-    echo "当前 ddnsto 版本是: $ddnsto_ver, 开始替换......"
+# clone_dir main https://github.com/linkease/nas-packages-luci luci-app-ddnsto
+# clone_dir master https://github.com/linkease/nas-packages ddnsto
+# ddnsto_ver=$(grep -i "PKG_VERSION:=" $destination_dir/ddnsto/Makefile | awk -F'=' '{print $2}' | tr -d ' ')
+# if [ "$ddnsto_ver" == "3.0.4" ]; then
+#     echo "当前 ddnsto 版本是: $ddnsto_ver, 开始替换......"
 
-    sed -i 's|PKG_SOURCE_URL:=.*|PKG_SOURCE_URL:=https://github.com/Jejz168/OpenWrt/raw/refs/heads/main/personal/ddnsto/|' $destination_dir/ddnsto/Makefile
+#     sed -i 's|PKG_SOURCE_URL:=.*|PKG_SOURCE_URL:=https://github.com/Jejz168/OpenWrt/raw/refs/heads/main/personal/ddnsto/|' $destination_dir/ddnsto/Makefile
 
-    echo "替换完成！"
-fi
+#   echo "替换完成！"
+# fi
 
 # OpenAppFilter 应用过滤
 clone_all https://github.com/sbwml/OpenAppFilter
@@ -115,31 +115,31 @@ clone_all https://github.com/sbwml/OpenAppFilter
 # git_clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic
 
 # smartdns
-git_clone https://github.com/pymumu/luci-app-smartdns luci-app-smartdns
-git_clone https://github.com/pymumu/openwrt-smartdns smartdns
+# git_clone https://github.com/pymumu/luci-app-smartdns luci-app-smartdns
+# git_clone https://github.com/pymumu/openwrt-smartdns smartdns
 
 # mosdns
-clone_all v5 https://github.com/sbwml/luci-app-mosdns
+# clone_all v5 https://github.com/sbwml/luci-app-mosdns
 
 # alist
 git_clone https://github.com/sbwml/packages_lang_golang golang
 clone_all https://github.com/sbwml/luci-app-alist
 
 # ssr-plus
-clone_all https://github.com/fw876/helloworld
+# clone_all https://github.com/fw876/helloworld
 
 # passwall
-clone_all https://github.com/xiaorouji/openwrt-passwall-packages
-clone_all https://github.com/xiaorouji/openwrt-passwall
+# clone_all https://github.com/xiaorouji/openwrt-passwall-packages
+# clone_all https://github.com/xiaorouji/openwrt-passwall
 
 # passwall2
 # clone_all https://github.com/xiaorouji/openwrt-passwall2
 
 # mihomo
-clone_all https://github.com/morytyann/OpenWrt-mihomo
+# clone_all https://github.com/morytyann/OpenWrt-mihomo
 
 # homeproxy
-git_clone https://github.com/immortalwrt/homeproxy luci-app-homeproxy
+# git_clone https://github.com/immortalwrt/homeproxy luci-app-homeproxy
 
 # luci-app-filemanager
 git_clone https://github.com/sbwml/luci-app-filemanager luci-app-filemanager
@@ -192,7 +192,7 @@ sed -i 's|<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank
 # 显示增加编译时间
 pushd package/lean/default-settings/files
 export orig_version=$(cat "zzz-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')
-export date_version="By @Jejz build $(TZ=UTC-8 date '+%Y-%m-%d %H:%M')"
+export date_version="By @Ethan build $(TZ=UTC-8 date '+%Y-%m-%d %H:%M')"
 sed -i "s/${orig_version}/${orig_version} (${date_version})/g" zzz-default-settings
 popd
 echo -e "\e[41m当前写入的编译时间:\e[0m \e[33m$(grep 'DISTRIB_REVISION=' package/lean/default-settings/files/zzz-default-settings)\e[0m"
@@ -200,7 +200,7 @@ echo -e "\e[41m当前写入的编译时间:\e[0m \e[33m$(grep 'DISTRIB_REVISION=
 # 修改欢迎banner
 # cp -f $GITHUB_WORKSPACE/personal/banner package/base-files/files/etc/banner
 # wget -O ./package/base-files/files/etc/banner https://raw.githubusercontent.com/Jejz168/OpenWrt/main/personal/banner
-sed -i "/\\   DE \//s/$/  [31mBy @Jejz build $(TZ=UTC-8 date '+%Y.%m.%d')[0m/" package/base-files/files/etc/banner
+sed -i "/\\   DE \//s/$/  [31mBy @Ethan build $(TZ=UTC-8 date '+%Y.%m.%d')[0m/" package/base-files/files/etc/banner
 cat package/base-files/files/etc/banner
 
 # 修改makefile
@@ -225,8 +225,8 @@ sed -i 's/services\///g' feeds/luci/applications/luci-app-nlbwmon/htdocs/luci-st
 primary_dir="feeds/luci/applications"
 fallback_dir="$destination_dir"
 apps=(
-    "luci-app-p910nd:services/nas"
-    "luci-app-aria2:services/nas"
+   #  "luci-app-p910nd:services/nas"
+   #  "luci-app-aria2:services/nas"
     "luci-app-filebrowser:services/nas"
     "luci-app-ksmbd:services/nas"
     "luci-app-ttyd:services/system"
@@ -256,8 +256,8 @@ sed -i '3a \		"order": 10,' feeds/luci/applications/luci-app-ttyd/root/usr/share
 sed -i 's,终端,TTYD 终端,g' feeds/luci/applications/luci-app-ttyd/po/zh_Hans/ttyd.po
 
 # 重命名
-sed -i 's,frp 服务器,Frp 服务器,g' feeds/luci/applications/luci-app-frps/po/zh_Hans/frps.po
-sed -i 's,frp 客户端,Frp 客户端,g' feeds/luci/applications/luci-app-frpc/po/zh_Hans/frpc.po
+# sed -i 's,frp 服务器,Frp 服务器,g' feeds/luci/applications/luci-app-frps/po/zh_Hans/frps.po
+# sed -i 's,frp 客户端,Frp 客户端,g' feeds/luci/applications/luci-app-frpc/po/zh_Hans/frpc.po
 
 # 修改插件名字
 # sed -i 's/"挂载 SMB 网络共享"/"挂载共享"/g' `grep "挂载 SMB 网络共享" -rl ./`
