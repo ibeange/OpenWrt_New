@@ -484,7 +484,7 @@ jobs:
           📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
 
     - name: Push notification upload success
-      uses: chimpdev/bark-github-action@v1.0.0
+      uses: chimpdev/bark-github-action@v1.0.4
       with:
         device_key: ${{ secrets.BARK_KEY }}
         server_url: ${{ secrets.BARK_SERVER_URL }}
@@ -801,7 +801,7 @@ jobs:
           📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
 
     - name: Push notification upload success
-      uses: chimpdev/bark-github-action@v1.0.0
+      uses: chimpdev/bark-github-action@v1.0.4
       with:
         device_key: ${{ secrets.BARK_KEY }}
         server_url: ${{ secrets.BARK_SERVER_URL }}
@@ -1121,7 +1121,7 @@ jobs:
           📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
 
     - name: Push notification upload success
-      uses: chimpdev/bark-github-action@v1.0.0
+      uses: chimpdev/bark-github-action@v1.0.4
       with:
         device_key: ${{ secrets.BARK_KEY }}
         server_url: ${{ secrets.BARK_SERVER_URL }}
@@ -1439,7 +1439,7 @@ jobs:
           📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
 
     - name: Push notification upload success
-      uses: chimpdev/bark-github-action@v1.0.0
+      uses: chimpdev/bark-github-action@v1.0.4
       with:
         device_key: ${{ secrets.BARK_KEY }}
         server_url: ${{ secrets.BARK_SERVER_URL }}
@@ -1761,7 +1761,7 @@ jobs:
           📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
 
     - name: Push notification upload success
-      uses: chimpdev/bark-github-action@v1.0.0
+      uses: chimpdev/bark-github-action@v1.0.4
       with:
         device_key: ${{ secrets.BARK_KEY }}
         server_url: ${{ secrets.BARK_SERVER_URL }}
