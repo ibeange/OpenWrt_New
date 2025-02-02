@@ -14,7 +14,7 @@ chmod +x $GITHUB_WORKSPACE/diy_script/function.sh
 source $GITHUB_WORKSPACE/diy_script/function.sh
 
 # 修改主机名字，修改你喜欢的就行（不能纯数字或者使用中文）
-sed -i "/uci commit system/i\uci set system.@system[0].hostname='Ethan'" package/lean/default-settings/files/zzz-default-settings
+sed -i "/uci commit system/i\uci set system.@system[0].hostname='EthanWRT'" package/lean/default-settings/files/zzz-default-settings
 sed -i "s/hostname='.*'/hostname='Ethan'/g" ./package/base-files/files/bin/config_generate
 
 # 修改默认IP
@@ -82,7 +82,7 @@ clone_dir master https://github.com/immortalwrt/luci luci-app-eqos luci-app-nps 
 clone_dir master https://github.com/immortalwrt/packages nps socat
 
 # ddns-go 动态域名
-# clone_all https://github.com/sirpdboy/luci-app-ddns-go
+clone_all https://github.com/sirpdboy/luci-app-ddns-go
 
 # chatgpt
 # git_clone https://github.com/sirpdboy/luci-app-chatgpt-web luci-app-chatgpt
@@ -153,9 +153,11 @@ make && sudo make install
 popd
 
 # argon 主题
-git_clone https://github.com/jerrykuku/luci-theme-argon
-git_clone https://github.com/jerrykuku/luci-app-argon-config
-# clone_all https://github.com/sbwml/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/applications/luci-app-argon-config
+git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+git clone --depth=1 -b js https://github.com/lwb1978/luci-theme-kucat package/luci-theme-kucat
 
 # 更改argon主题背景
 # cp -f $GITHUB_WORKSPACE/personal/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
@@ -227,8 +229,8 @@ fallback_dir="$destination_dir"
 apps=(
    #  "luci-app-p910nd:services/nas"
    #  "luci-app-aria2:services/nas"
-    "luci-app-filebrowser:services/nas"
-    "luci-app-ksmbd:services/nas"
+   # "luci-app-filebrowser:services/nas"
+   # "luci-app-ksmbd:services/nas"
     "luci-app-ttyd:services/system"
     "luci-app-eqos:services/network"
 )
