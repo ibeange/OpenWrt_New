@@ -502,7 +502,7 @@ jobs:
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
           📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
         url: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
-		if: always() # Run this step regardless of the outcome of previous steps
+      if: always() # Run this step regardless of the outcome of previous steps
 # /////////////////////////////////////////////////////////////////////////////////////////////////////////
   Build_x86_64_515:
     needs: [Checka,job_init]
@@ -819,7 +819,7 @@ jobs:
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
           📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
         url: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
-		if: always() # Run this step regardless of the outcome of previous steps
+      if: always() # Run this step regardless of the outcome of previous steps
 # /////////////////////////////////////////////////////////////////////////////////////////////////////////
   Build_x86_64_61:
     needs: [Checka,job_init]
@@ -1139,7 +1139,7 @@ jobs:
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
           📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
         url: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
-		if: always() # Run this step regardless of the outcome of previous steps
+      if: always() # Run this step regardless of the outcome of previous steps
 # //////////////////////////////////////////////////////////////////////////////////////////////
   Build_x86_64_66:
     needs: [Checka,job_init]
@@ -1457,7 +1457,7 @@ jobs:
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
           📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
         url: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
-		if: always() # Run this step regardless of the outcome of previous steps
+      if: always() # Run this step regardless of the outcome of previous steps
 # //////////////////////////////////////////////////////////////////////////////////////////////
   Build_x86_64_612:
     needs: [Checka,job_init]
@@ -1779,7 +1779,7 @@ jobs:
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
           📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
         url: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
-		if: always() # Run this step regardless of the outcome of previous steps
+       if: always() # Run this step regardless of the outcome of previous steps
 # //////////////////////////////////////////////////////////////////////////////////////////////
   Cleaning:
     if: ${{ always() }}
