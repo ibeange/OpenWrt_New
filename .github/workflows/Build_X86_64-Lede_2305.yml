@@ -481,14 +481,15 @@ jobs:
           内容: ${{ env.commit }}
           hash: ${{ env.hash }}
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
-          📍: https://github.com/Jejz168/OpenWrt/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+          📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
 
     - name: Push notification upload success
-      uses: xhnmt/pushplus-action@main
+      uses: chimpdev/bark-github-action@v1.0.0
       with:
-        token: ${{ secrets.PUSH_PLUS_TOKEN }}
+        device_key: ${{ secrets.BARK_KEY }}
+        server_url: ${{ secrets.BARK_SERVER_URL }}
         title: "[LEDE-2305]${{ env.FILE_NAME }}_${{ env.KERNEL }}编译完成"
-        content: |
+        body: |
           ♨️ ${{ env.FILE_NAME }}_${{ env.KERNEL }}[LEDE-2305]编译完成
           开始时间：${{ env.DATE }}
           完成时间：${{ env.END }}
@@ -499,7 +500,9 @@ jobs:
           内容: ${{ env.commit }}
           hash: ${{ env.hash }}
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
-          📍: https://github.com/Jejz168/OpenWrt/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+          📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+        url: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+		if: always() # Run this step regardless of the outcome of previous steps
 # /////////////////////////////////////////////////////////////////////////////////////////////////////////
   Build_x86_64_515:
     needs: [Checka,job_init]
@@ -795,14 +798,15 @@ jobs:
           内容: ${{ env.commit }}
           hash: ${{ env.hash }}
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
-          📍: https://github.com/Jejz168/OpenWrt/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+          📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
 
     - name: Push notification upload success
-      uses: xhnmt/pushplus-action@main
+      uses: chimpdev/bark-github-action@v1.0.0
       with:
-        token: ${{ secrets.PUSH_PLUS_TOKEN }}
+        device_key: ${{ secrets.BARK_KEY }}
+        server_url: ${{ secrets.BARK_SERVER_URL }}
         title: "[LEDE-2305]${{ env.FILE_NAME }}_${{ env.KERNEL }}编译完成"
-        content: |
+        body: |
           ♨️ ${{ env.FILE_NAME }}_${{ env.KERNEL }}[LEDE-2305]编译完成
           开始时间：${{ env.DATE }}
           完成时间：${{ env.END }}
@@ -813,7 +817,9 @@ jobs:
           内容: ${{ env.commit }}
           hash: ${{ env.hash }}
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
-          📍: https://github.com/Jejz168/OpenWrt/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+          📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+        url: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+		if: always() # Run this step regardless of the outcome of previous steps
 # /////////////////////////////////////////////////////////////////////////////////////////////////////////
   Build_x86_64_61:
     needs: [Checka,job_init]
@@ -1112,14 +1118,15 @@ jobs:
           内容: ${{ env.commit }}
           hash: ${{ env.hash }}
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
-          📍: https://github.com/Jejz168/OpenWrt/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+          📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
 
     - name: Push notification upload success
-      uses: xhnmt/pushplus-action@main
+      uses: chimpdev/bark-github-action@v1.0.0
       with:
-        token: ${{ secrets.PUSH_PLUS_TOKEN }}
+        device_key: ${{ secrets.BARK_KEY }}
+        server_url: ${{ secrets.BARK_SERVER_URL }}
         title: "[LEDE-2305]${{ env.FILE_NAME }}_${{ env.KERNEL }}编译完成"
-        content: |
+        body: |
           ♨️ ${{ env.FILE_NAME }}_${{ env.KERNEL }}[LEDE-2305]编译完成
           开始时间：${{ env.DATE }}
           完成时间：${{ env.END }}
@@ -1130,7 +1137,9 @@ jobs:
           内容: ${{ env.commit }}
           hash: ${{ env.hash }}
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
-          📍: https://github.com/Jejz168/OpenWrt/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+          📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+        url: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+		if: always() # Run this step regardless of the outcome of previous steps
 # //////////////////////////////////////////////////////////////////////////////////////////////
   Build_x86_64_66:
     needs: [Checka,job_init]
@@ -1427,14 +1436,15 @@ jobs:
           内容: ${{ env.commit }}
           hash: ${{ env.hash }}
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
-          📍: https://github.com/Jejz168/OpenWrt/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+          📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
 
     - name: Push notification upload success
-      uses: xhnmt/pushplus-action@main
+      uses: chimpdev/bark-github-action@v1.0.0
       with:
-        token: ${{ secrets.PUSH_PLUS_TOKEN }}
+        device_key: ${{ secrets.BARK_KEY }}
+        server_url: ${{ secrets.BARK_SERVER_URL }}
         title: "[LEDE-2305]${{ env.FILE_NAME }}_${{ env.KERNEL }}编译完成"
-        content: |
+        body: |
           ♨️ ${{ env.FILE_NAME }}_${{ env.KERNEL }}[LEDE-2305]编译完成
           开始时间：${{ env.DATE }}
           完成时间：${{ env.END }}
@@ -1445,7 +1455,9 @@ jobs:
           内容: ${{ env.commit }}
           hash: ${{ env.hash }}
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
-          📍: https://github.com/Jejz168/OpenWrt/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+          📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+        url: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+		if: always() # Run this step regardless of the outcome of previous steps
 # //////////////////////////////////////////////////////////////////////////////////////////////
   Build_x86_64_612:
     needs: [Checka,job_init]
@@ -1746,14 +1758,15 @@ jobs:
           内容: ${{ env.commit }}
           hash: ${{ env.hash }}
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
-          📍: https://github.com/Jejz168/OpenWrt/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+          📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
 
     - name: Push notification upload success
-      uses: xhnmt/pushplus-action@main
+      uses: chimpdev/bark-github-action@v1.0.0
       with:
-        token: ${{ secrets.PUSH_PLUS_TOKEN }}
+        device_key: ${{ secrets.BARK_KEY }}
+        server_url: ${{ secrets.BARK_SERVER_URL }}
         title: "[LEDE-2305]${{ env.FILE_NAME }}_${{ env.KERNEL }}编译完成"
-        content: |
+        body: |
           ♨️ ${{ env.FILE_NAME }}_${{ env.KERNEL }}[LEDE-2305]编译完成
           开始时间：${{ env.DATE }}
           完成时间：${{ env.END }}
@@ -1764,7 +1777,9 @@ jobs:
           内容: ${{ env.commit }}
           hash: ${{ env.hash }}
           ✪ ✣ ✤ ✥ ✦ ❉ ❦ ❧ ❃ ❂ ❁ ❀
-          📍: https://github.com/Jejz168/OpenWrt/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+          📍: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+        url: https://github.com/ibeange/OpenWrt_New/releases/tag/${{ env.TAG }}-2305_${{ env.KERNEL }}
+		if: always() # Run this step regardless of the outcome of previous steps
 # //////////////////////////////////////////////////////////////////////////////////////////////
   Cleaning:
     if: ${{ always() }}
